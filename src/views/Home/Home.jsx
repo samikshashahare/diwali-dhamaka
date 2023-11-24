@@ -25,7 +25,7 @@ function Home() {
         {GREETING[greetingnumber]}
       </p>
 
-        <span className="from-text">आपले शुभेच्छुक {from}</span>
+        <span className="from-text">from {from}</span>
     </div>
   )
 }
