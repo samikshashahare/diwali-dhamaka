@@ -1,12 +1,64 @@
-.greetings-container{
+.greetings-container {
      box-shadow: 1px 1px 2px 2px grey;
-     padding:10px;
+     padding: 10px;
      margin: 50px auto;
-position: relative;
+     position: relative;
+     width: 50%;
+     display: block;
+     margin: auto;
+
 }
 
-.from-text{
-position: absolute;
-right: 10px;
-bottom: 10px;
+.from-text {
+     position: absolute;
+     right: 10px;
+     bottom: 10px;
+}
+
+
+.diwali-lamp{
+     height:50px;
+     position:absolute;
+     top:10px;
+}
+
+.left-lamp{
+     left:10px;
+}
+.right-lamp{
+     right:10px;
+}
+.lamp{
+     height:100px;
+     position: absolute;
+     bottom: 10px;
+     right: 10px;
+     
+}
+.theme-1{
+     background-image: linear-gradient(lightblue,pink) ;
+}
+.theme-2{
+     background-image:linear-gradient(lightgreen,gold) ;
+}
+.theme-3{
+     background-image:linear-gradient(rgb(107, 2, 69),rgb(150, 199, 251)) ;
+}
+.theme-4{
+     background-image: linear-gradient(red,gold);
+}
+.theme-5{
+     background-image: linear-gradient(rgb(184, 83, 234),rgb(255, 149, 0));
+}
+.theme-6{
+     background-image:linear-gradient( rgb(245, 108, 108),violet) ;
+}
+.theme-7{
+     background-image:linear-gradient(brown,rgb(206, 9, 6),orange) ;
+}
+
+@media screen and (max-width: 768px){
+     .greetings-container{
+          width:75%;
+     }
 }
