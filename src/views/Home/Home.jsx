@@ -1,7 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import './Home.css'
 import Lamp from './lantern.png';
-import Diwalilamp from './diwali-lamp.webp'
+import Diwalilamp from './diwali-lamp.webp';
 import { useState } from "react";
 
 const GREETING = [
@@ -21,7 +21,7 @@ function Home() {
   const [to, setTo] = useState(SearchParams.get("to"));
   const [from, setFrom] = useState(SearchParams.get("from"));
   const [greetingnumber, setGreetingnumber] = useState(SearchParams.get("g") > GREETING.length ? 0 : SearchParams.get("g") || 0);
-  const [themenumber, setThemenumber] = (SearchParams.get("t"));
+  const [themenumber, setThemenumber] = useState(SearchParams.get("t"));
 
   return (
     <div>
@@ -41,34 +41,56 @@ function Home() {
         <br />
       </div>
 
-      <div>
-        <input type='text'
-          placeholder="To"
-          value={to}
-          onChange={(e) => {
-            setTo(e.target.value)
-          }} />
+      <input type='text'
+        placeholder="To"
+        className="input"
+        value={to}
+        onChange={(e) => {
+          setTo(e.target.value)
+        }} />
 
-        <br /><br />
-        <input type='text'
-          placeholder="From"
-          value={from}
-          onChange={(e) => {
-            setFrom(e.target.value)
-          }} />
-        <br /><br />
-        <select value={greetingnumber} onChange={(e) => {
+
+      <input type='text'
+        placeholder="From"
+        className="input"
+        value={from}
+        onChange={(e) => {
+          setFrom(e.target.value)
+
+        }} />
+
+      <select
+        className="input"
+        value={greetingnumber}
+        onChange={(e) => {
           setGreetingnumber(e.target.value)
+
         }}>
-          <option value="0">Greeting 1</option>
-          <option value="1">Greeting 2</option>
-          <option value="2">Greeting 3</option>
-          <option value="3">Greeting 4</option>
+        <option value="0">Greeting 1</option>
+        <option value="1">Greeting 2</option>
+        <option value="2">Greeting 3</option>
+        <option value="3">Greeting 4</option>
+      </ select>
 
-        </ select>
-      </div>
+      <select
+        className="input"
+        value={themenumber}
+        onChange={(e) => {
+          setThemenumber(e.target.value)
 
-      <p>{import.meta.env.VITE_BASE_URL}?to{to}&from={from}&g={greetingnumber}&t={themenumber}</p>
+        }}>
+        <option value="0">none</option>
+        <option value="1">Theme 1</option>
+        <option value="2">Theme 2</option>
+        <option value="3">Theme 3</option>
+        <option value="4">Theme 4</option>
+        <option value="5">Theme 5</option>
+        <option value="6">Theme 6</option>
+        <option value="7">Theme 7</option>
+      </select>
+
+      <p className="url">{import.meta.env.VITE_BASE_URL}http://localhost:5173/?to{to}&from={from}&g={greetingnumber}&t={themenumber}</p>
+
     </div>
   )
 }
